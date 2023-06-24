@@ -1,0 +1,18 @@
+.dark-mode {
+  //Change all background to black
+  * {
+    background: black;
+  }
+
+  //Change h1 and p to white
+  h1,
+  p {
+    color: white;
+  }
+
+  //Change button to white and add padding
+  button {
+    background: orange;
+    padding: 10px;
+  }
+}
