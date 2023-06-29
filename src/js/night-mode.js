@@ -1,25 +1,40 @@
 //use query selector
-let button = document.querySelector("#nightMode");
+let button = document.querySelector("#adeleyeayodeji");
 //add event listener
-button.addEventListener("click", () => {
+button.addEventListener("change", () => {
+  //check if button is checked
+  if (button.checked) {
+    //do something if the button is checked
+    nightModeOn();
+  } else {
+    //do something if the button is not checked
+    nightModeOff();
+  }
+});
+
+//nightModeOn
+let nightModeOn = () => {
+  var documentElement = document.documentElement;
+  //check if document element does not contain dark mode class
+  if (!documentElement.classList.contains("dark-mode")) {
+    //add dark mode class to document element
+    documentElement.classList.add("dark-mode");
+    //save dark mode to local storage
+    localStorage.setItem("ERTdarkMode", "true");
+  }
+};
+
+//nightModeOff
+let nightModeOff = () => {
   var documentElement = document.documentElement;
   //check if document element contain dark mode class
   if (documentElement.classList.contains("dark-mode")) {
     //remove dark mode class from document element
     documentElement.classList.remove("dark-mode");
-    //set button text to dark mode
-    button.textContent = "Toggle dark mode";
     //save dark mode to local storage
     localStorage.setItem("ERTdarkMode", "false");
-  } else {
-    //add dark mode class to document element
-    documentElement.classList.add("dark-mode");
-    //set button text to light mode
-    button.textContent = "Toggle light mode";
-    //save dark mode to local storage
-    localStorage.setItem("ERTdarkMode", "true");
   }
-});
+};
 
 //init
 let initDarkMode = () => {
@@ -34,8 +49,8 @@ let initDarkMode = () => {
   if (darkMode === "true") {
     //add dark mode class to document element
     document.documentElement.classList.add("dark-mode");
-    //set button text to light mode
-    button.textContent = "Toggle light mode";
+    //check the button
+    button.checked = true;
   }
 };
 

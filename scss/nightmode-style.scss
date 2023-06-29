@@ -1,18 +1,74 @@
 .dark-mode {
-  //Change all background to black
-  * {
-    background: black;
+  body {
+    background: #1d1d1d !important;
   }
 
-  //Change h1 and p to white
-  h1,
-  p {
+  .navbar * {
+    color: #fff !important;
+  }
+
+  .card {
+    background: #343438 !important;
+
+    .card-body * {
+      color: #fff !important;
+    }
+  }
+
+  .card-header {
+    background: #343438 !important;
+
+    * {
+      color: #fff !important;
+    }
+  }
+
+  .card-footer {
+    p {
+      color: lightgray;
+    }
+  }
+
+  hr.horizontal.dark {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 40%),
+      transparent
+    );
+  }
+
+  .table > :not(:last-child) > :last-child > * {
+    border-bottom-color: #f0f2f53b;
+  }
+
+  thead,
+  tbody,
+  tfoot,
+  tr,
+  td,
+  th {
+    border-color: #f0f2f53b;
+  }
+
+  div.col-auto.my-auto {
+    * {
+      color: #fff !important;
+    }
+  }
+
+  .nav.nav-pills .nav-link.active {
     color: white;
+    background-color: #343438;
   }
 
-  //Change button to white and add padding
-  button {
-    background: orange;
-    padding: 10px;
+  .list-group-item {
+    background: #343438;
+  }
+
+  .darkmodeproject {
+    * {
+      color: #fff !important;
+    }
   }
 }
